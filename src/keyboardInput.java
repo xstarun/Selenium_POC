@@ -10,11 +10,18 @@ public class keyboardInput {
         //Path for firefox webdriver
         //  System.setProperty("webdriver.chrome.driver", "");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://formy-project.herokuapp.com/");
+        driver.get("https://formy-project.herokuapp.com/keypress");
         //driver.findElement(By.name("q")).sendKeys("Selenium");
 
-        driver.navigate().back();
-        driver.navigate().forward();
+        WebElement name = driver.findElement(By.id("name"));
+        name.click();
+        name.sendKeys( "Tarun Sharma");
+
+        WebElement button = driver.findElement(By.id("button"));
+        button.click();
+
+        //driver.navigate().back();
+        //driver.navigate().forward();
 
         driver.close();
         driver.quit();
